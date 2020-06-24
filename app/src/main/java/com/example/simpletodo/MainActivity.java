@@ -38,25 +38,30 @@ public class MainActivity extends AppCompatActivity {
         etItem = findViewById(R.id.etItem);
         rvItems = findViewById(R.id.rvItems);
 
+        //gets previous to-do items and puts them in items
         loadItems();
 
+        //runs when the adapter is long clicked, deletes the long clicked item
         ItemsAdapter.OnLongClickListener onLongClickListener = new ItemsAdapter.OnLongClickListener() {
             @Override
             public void onItemLongClicked(int position) {
                 //delete the item from the model
                 items.remove(position);
 
-                //notify the adapter
+                //notify the adapter that this item has just been removed
                 itemsAdapter.notifyItemRemoved(position);
                 Toast.makeText(getApplicationContext(), "Item was removed!", Toast.LENGTH_SHORT).show();
+                //save changes to file
                 saveItems();
             }
         };
+
 
         itemsAdapter = new ItemsAdapter(items, onLongClickListener);
         rvItems.setAdapter(itemsAdapter);
         rvItems.setLayoutManager(new LinearLayoutManager(this));
 
+        //runs when btnAdd is clicked to add the to-do to the list
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 etItem.setText("");
 
                 Toast.makeText(getApplicationContext(), "Item was added!", Toast.LENGTH_SHORT).show();
+
+                //updates file system
                 saveItems();
             }
         });
