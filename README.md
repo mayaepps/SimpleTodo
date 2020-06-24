@@ -18,9 +18,6 @@ The following **stretch** features are implemented:
 
 * [ ] User can **tap a todo item in the list and bring up an edit screen for the todo item** and then have any changes to the text reflected in the todo list
 
-The following **additional** features are implemented:
-
-* [ ] List anything else that you can get done to improve the app functionality!
 
 ## Video Walkthrough
 
@@ -32,11 +29,11 @@ GIF created with [Kap](https://getkap.co/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I struggled to understand RecyclerView, and specifically the use of the adapter, in the walkthrough video. However, I am working on watching other resources and videos to hopefully understand it better. I also found a few times that the app would crash unexpectedly beacuse I had a bug, but this actually ended up helping me use the debugging tools in Android Studio to find my mistake.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2020] [CodePath]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
